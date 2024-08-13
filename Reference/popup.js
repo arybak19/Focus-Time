@@ -26,11 +26,6 @@ for (const tab of tabs) {
   elements.add(element);
 }
 document.querySelector("ul").append(...elements);
-{
-  "permissions": [
-    "tabGroups"
-  ]
-}
 const button = document.querySelector("button");
 button.addEventListener("click", async () => {
   const tabIds = tabs.map(({ id }) => id);

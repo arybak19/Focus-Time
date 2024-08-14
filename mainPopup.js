@@ -12,12 +12,10 @@ chrome.tabs.query({ currentWindow: true }, function(tabs) {
         listItem.appendChild(tabUrl);
         tabList.appendChild(listItem);
     });
-    window.onload = function() {
-        var timeWanted = localStorage.getItem('timeWanted');
-        if(timeWanted) {
-            document.getElementById('focusTimeShowing').innerText = 'Focus Time: ' + parseInt(timeWanted, 10);
-        } else {
-            document.getElementById('focusTimeShowing').innerText = 'No time entered.';
-        }
-        }
+    window.addEventListener('load', () => {
+        const params = new (URL(document.location)).searchParams;
+        const time = params.get('timeWanted');
+
+        document.getElementById('userTime').innerHTML = time;
+    })
         });

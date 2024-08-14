@@ -17,14 +17,14 @@
 </body>
         <script>
             function userTime() {
-                const timeInputed = new Date.toLocaleTimeString();
-                localStorage.setItem('timeWanted', timeInputed);
+                const timeWanted = document.getElementById('timeWanted').value;
+                localStorage.setItem('focusTime', timeWanted);
             }
             </script>
-      <body  onload="userTime()">
+      <body>
         <h2> Set Focus Time</h2>
         <input type="number" id="timeWanted" placeholder="Enter time in minutes" />
-
+        <button onclick="userTime()">Save Time</button>
         <ul></ul>
 
 

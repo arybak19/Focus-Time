@@ -13,8 +13,7 @@ chrome.tabs.query({ currentWindow: true }, function(tabs) {
         tabList.appendChild(listItem);
     });
     window.addEventListener('load', () => {
-        const params = new (URL(document.location)).searchParams;
-        const time = params.get('timeWanted');
+        const time = sessionStorage.getItem('timeWanted');
 
         document.getElementById('userTime').innerHTML = time;
     })

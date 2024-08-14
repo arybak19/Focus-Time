@@ -16,9 +16,12 @@
 
 </body>
       <body>
+        <script type="text/javascript" src = "index.js"></script>
         <h2> Set Focus Time</h2>
-        <input type="number" id="timeWanted" name= "timeWanted" placeholder="Enter time in minutes" />
-        <input type="submit" placeholder="Save time">
+        <form action="mainPopup.html" method="POST">
+        <input type="text" id="timeWanted" name= "timeWanted" placeholder="Enter time in minutes" />
+        <input type="submit" onclick="handleSubmit()"/>
+        </form>
         <ul></ul>
 
 

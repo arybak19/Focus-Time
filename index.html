@@ -16,12 +16,16 @@
 
 </body>
       <body>
-        <script type="text/javascript" src = "index.js"></script>
+        <script>
+            function passvalue() {
+                var num = document.getElementById("time").value;
+                localStorage.setItem("numValue", num);
+                return false;
+            }
+        </script>
         <h2> Set Focus Time</h2>
-        <form action="mainPopup.html" method="POST">
-        <input type="text" id="timeWanted" name= "timeWanted" placeholder="Enter time in minutes" />
-        <input type="submit" onclick="handleSubmit()"/>
-        </form>
+        <input type="text" id="time" placeholder="Enter time in minutes" />
+        <input type="submit" value="Click" onclick="passvalue()"/>
         <ul></ul>
 
 

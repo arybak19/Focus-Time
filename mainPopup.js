@@ -12,9 +12,4 @@ chrome.tabs.query({ currentWindow: true }, function(tabs) {
         listItem.appendChild(tabUrl);
         tabList.appendChild(listItem);
     });
-    window.addEventListener('load', () => {
-        const time = sessionStorage.getItem('timeWanted');
-
-        document.getElementById('userTime').innerHTML = time;
-    })
         });

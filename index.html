@@ -15,16 +15,13 @@
         </a>
 
 </body>
-        <script>
-            function userTime() {
-                const timeInputed = new Date.toLocaleTimeString();
-                localStorage.setItem('timeWanted', timeInputed);
-            }
-            </script>
-      <body  onload="userTime()">
+      <body>
+        <script type="text/javascript" src = "index.js"></script>
         <h2> Set Focus Time</h2>
-        <input type="number" id="timeWanted" placeholder="Enter time in minutes" />
-
+        <form action="mainPopup.html" method="POST">
+        <input type="text" id="timeWanted" name= "timeWanted" placeholder="Enter time in minutes" />
+        <input type="submit" onclick="handleSubmit()"/>
+        </form>
         <ul></ul>
 
 

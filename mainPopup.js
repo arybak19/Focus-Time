@@ -12,11 +12,9 @@ chrome.tabs.query({ currentWindow: true }, function(tabs) {
         listItem.appendChild(tabUrl);
         tabList.appendChild(listItem);
     });
+    window.addEventListener('load', () => {
+        const time = sessionStorage.getItem('timeWanted');
 
-document.activeEventListener('DOMContentLoaded', function() {
-    const timeFocus = localStorage.getItem('timeFocus');
-    if (timeFocus) {
-        document.getElementById('focusTimeShowing').textContent = 'Focus Time: ${timeFocus} minutes';
-    }
-});
-});
+        document.getElementById('userTime').innerHTML = time;
+    })
+        });

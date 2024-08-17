@@ -15,8 +15,8 @@ if(--timer < 0 ) {
     }, 1000);    
 }
 
-   jQuery(function($) {
+   window.onload = function() {
         var userInput = 60 * 5, //the five will be the users inputed time
-        display = $('#time');
+        display = document.querySelector('#time');
         startTimer(userInput, display);
-    });
+    };

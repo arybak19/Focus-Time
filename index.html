@@ -16,14 +16,8 @@
 
 </body>
       <body>
-        <script>
-            function passvalue() {
-                var num = document.getElementById("time").value;
-                localStorage.setItem("numValue", num);
-                return false;
-            }
-        </script>
         <h2> Set Focus Time</h2>
+        <script src="index.js"></script>
         <input type="text" id="time" placeholder="Enter time in minutes" />
         <input type="submit" value="Save Time" onclick="passvalue()"/>
         <ul></ul>

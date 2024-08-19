@@ -16,7 +16,7 @@ if(--timer < 0 ) {
 }
 
    window.onload = function() {
-        var userInput = 60 * 5, //the five will be the users inputed time
+        var userInput = 60 * value, //the five will be the users inputed time
         display = document.querySelector('#time');
         startTimer(userInput, display);
     };

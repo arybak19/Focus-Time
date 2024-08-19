@@ -8,8 +8,8 @@
 </head>
     <script>
         function displayTime() {
-            const storedTime = localStorage.getItem("timeWanted");
-            document.getElementById("focusTimeShowing").innerText = storedTime;
+            const storedTime = localStorage.getItem('focusTime');
+            document.getElementById('focusTimeShowing').innerText = storedTime;
         }
         </script>
        <body onload="displayTime()">

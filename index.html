@@ -13,6 +13,23 @@
         <a href="mainPopup.html">
             <button>Proceed</button>
         </a>
+
+        <h2> Set Focus Time</h2>
+        <input type="number" id="timeWanted" placeholder="Enter time in minutes" />
+        <button id="startFocusButton"> Start </button>
         <ul></ul>
+
+        <script>
+            document.getElementById("startFocusButton").addEventListener("click", function()  {
+                const time = document.getElementById("timeWanted").value;
+                if(time  && time > 0 && time < 240) {
+                    localStorage.setItem("focusTime", time);
+                    window.location.href = "mainPopup.html";
+                } else {
+                    alert("Please enter a time that is valid!");
+                }
+            });
+        </script>
+
     </body>
 </html>

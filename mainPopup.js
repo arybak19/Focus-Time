@@ -12,4 +12,11 @@ chrome.tabs.query({ currentWindow: true }, function(tabs) {
         listItem.appendChild(tabUrl);
         tabList.appendChild(listItem);
     });
+
+document.activeEventListener('DOMContentLoaded', function() {
+    const timeFocus = localStorage.getItem('timeFocus');
+    if (timeFocus) {
+        document.getElementById('FocusTimeShowing').textContent = 'Focus Time: ${timeFocus} minutes';
+    }
+});
 });

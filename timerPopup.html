@@ -8,8 +8,8 @@
 </head>
 <body>
     <script>
-        function startTimer(left, display) {
-            var timer = left, minutes, seconds;
+        function startTimer(duration, display) {
+            var timer = duration, minutes, seconds;
             setInterval(function ()       { 
         minutes = parseInt(timer / 60, 10);
         seconds = parseInt(timer % 60, 10);
@@ -20,17 +20,18 @@
         display.textContent = minutes + ":" + seconds;
 
         if(--timer < 0 ) {
-            timer = left;
+            timer = duration;
+           }
+            }, 1000);    
         }
-            }, 1000);    }
 
-           window.onload = function() {
+           jQuery(function($) {
                 var userInput = 60 * 5, //the five will be the users inputed time
-                display = document.querySelector('#time');
+                display = $('#time');
                 startTimer(userInput, display);
-            };
+            });
     </script>
-    <h1>Time: <span id="time">5:00</span> minutes </h1>
+    <h1>Time: <span id="time">05:00</span> minutes </h1>
 
 </body>
 </html>

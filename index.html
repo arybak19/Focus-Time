@@ -14,14 +14,14 @@
             <button id = "start" >Proceed</button>
         </a>
 
-
+</body>
         <script>
             function userTime() {
                 const timeInputed = new Date.toLocaleTimeString();
                 localStorage.setItem('timeWanted', timeInputed);
             }
             </script>
-        onload="userTime()"
+      <body  onload="userTime()">
         <h2> Set Focus Time</h2>
         <input type="number" id="timeWanted" placeholder="Enter time in minutes" />
 

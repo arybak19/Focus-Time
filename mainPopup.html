@@ -6,15 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-    <script>
-        function displayTime() {
-            const storedTime = localStorage.getItem('focusTime');
-            document.getElementById('focusTimeShowing').innerText = storedTime;
-        }
-        </script>
-       <body onload="displayTime()">
+    
+    <body>
     <h1> Time </h1>
     <p id="focusTimeShowing"></p>
+    <script src = "mainPopup.js"></script>
     <h1>Current Tabs</h1>
     <a href="timerPopup.html">  
         <button>Focus</button>

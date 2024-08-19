@@ -11,11 +11,11 @@
         function startTimer(left, display) {
             var timer = left, minutes, seconds;
             setInterval(function ()       { 
-        minutes = parseInt(timer /60, 10);
+        minutes = parseInt(timer / 60, 10);
         seconds = parseInt(timer % 60, 10);
         
-        minutes = minutes < 10 ? "0" + minutes:minutes;
-        seconds = seconds < 10 ? "0" + seconds:seconds;
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
 
         display.textContent = minutes + ":" + seconds;
 
@@ -25,10 +25,10 @@
             }, 1000)    }
 
             window.onload = function() {
-                var userInput = 60 * 5 //the five will be the users inputed time
+                var userInput = 60 * 5, //the five will be the users inputed time
                 left = document.querySelector('#time');
                 startTimer(userInput, left);
-            }
+            };
     </script>
     <h1>Time: <span id="time"></span> </h1>
 

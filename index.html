@@ -6,21 +6,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Focus Time Necssary Popup</title>
         <!-- <link rel="stylesheet" href="./popup.css" /> -->
-        <script>
-            function submitValue() {
-                var input = document.getElementById('value-input');
-                var value = input.value;
-                localStorage.setItem('myValue', value);
-                window.location.href = 'mainPopup.html';
-            }
-        </script> 
     </head>
     <body>
         <h1>Attention!</h1>
         <p>Please make sure to have all the necessary tabs that you need open before starting your focus time</p>
-        
 </body>
       <body>
+        <script src="index.js"></script>
         <h2> Set Focus Time</h2>
         <input type="text" id="value-input" placeholder="Enter time in minutes...">
          <button id = "start"  onclick="submitValue()">Proceed</button>

@@ -17,9 +17,12 @@
 </body>
       <body>
         <h2> Set Focus Time</h2>
-        <script src="index.js"></script>
-        <input type="text" id="time" placeholder="Enter time in minutes" />
-        <input type="submit" value="Save Time" onclick="passvalue()"/>
+        <script>
+            window.onload = function() {
+                var value = prompt("Enter time in minutes: ");
+                localStorage.setItem("inputValue", value);
+            }
+        </script> 
         <ul></ul>
 
 

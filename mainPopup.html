@@ -10,11 +10,9 @@
     <body>
     <h1> Time </h1>
     <p>
-        <script src="index.js"></script>
-        <span id="result"></span>
-        <script> 
-        document.getElementById("result").innerHTML = localStorage.getItem("numValue");
-        </script>
+        <script>
+            window.onload = alert(localStorage.getItem("inputValue"));
+            </script>
     </p>
     <h1>Current Tabs</h1>
     <a href="timerPopup.html">  

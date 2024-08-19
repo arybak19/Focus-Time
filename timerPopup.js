@@ -16,7 +16,9 @@ if(--timer < 0 ) {
 }
 
    window.onload = function() {
-        var userInput = 60 * value, //the five will be the users inputed time
+        var value = localStorage.getItem('myValue');
+        let output = parseInt(value, 10);
+        var userInput = 60 * output, //the five will be the users inputed time
         display = document.querySelector('#time');
         startTimer(userInput, display);
     };

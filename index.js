@@ -1,6 +1,6 @@
-function handleSubmit() {
-    const timeWanted = document.getElementById('timeWanted').value;
-    sessionStorage.setItem("timeWanted", timeWanted);
-
-    return;
+function submitValue() {
+    var input = document.getElementById('value-input');
+    var value = input.value;
+    localStorage.setItem('myValue', value);
+    window.location.href = 'mainPopup.html';
 }

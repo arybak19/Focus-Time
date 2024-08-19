@@ -10,32 +10,13 @@
     <body>
         <h1>Attention!</h1>
         <p>Please make sure to have all the necessary tabs that you need open before starting your focus time</p>
-        <a href="mainPopup.html">
-            <button id = "start" >Proceed</button>
-        </a>
-
 </body>
       <body>
-        <script type="text/javascript" src = "index.js"></script>
+        <script src="index.js"></script>
         <h2> Set Focus Time</h2>
-        <form action="mainPopup.html" method="POST">
-        <input type="text" id="timeWanted" name= "timeWanted" placeholder="Enter time in minutes" />
-        <input type="submit" onclick="handleSubmit()"/>
-        </form>
-        <ul></ul>
-
-
-        <script>
-            document.getElementById("start").addEventListener("click", function()  {
-                const time = document.getElementById("timeWanted").value;
-                if(time  && time > 0 && time < 240) {
-                    localStorage.setItem("focusTime", time);
-                    window.location.href = "mainPopup.html";
-                } else {
-                    alert("Please enter a time that is valid!");
-                }
-            });
-        </script>
+        <input type="text" id="value-input" placeholder="Enter time in minutes...">
+         <button id = "start"  onclick="submitValue()">Proceed</button>
+        
 
     </body>
 </html>

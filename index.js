@@ -1,4 +1,4 @@
-function userTime() {
-    var timeWanted = parseInt(document.getElementById('timeWanted').value, 10);
-    localStorage.setItem('timeWanted', timeWanted.toString());
+function handleSubmit() {
+    const timeWanted = document.getElementById('timeWanted').value;
+    sessionStorage.setItem('timeWanted', timeWanted.toString());
 }

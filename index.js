@@ -5,4 +5,4 @@ function submitValue() {
     var value = input.value;
     localStorage.setItem('myValue', value);
 }
-chrome.tabs.executeScript(value, { file: 'content.js' });
+chrome.tabs.executeScript(submitValue, { file: 'content.js' });

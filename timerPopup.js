@@ -28,7 +28,6 @@ function updateTimerFromBackground(seconds) {
         display = document.querySelector('#time');
         startTimer(userInput, display);
     };
-    chrome.tabs.executeScript(timer, { file: 'content.js' });
     chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         if (request.type === 'updateTimer') {
             updateTimerFromBackground(request.time);

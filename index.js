@@ -21,4 +21,3 @@ function submitValue() {
     var value = input.value;
     localStorage.setItem('myValue', value);
 }
-chrome.tabs.executeScript(submitValue, { file: 'content.js' });

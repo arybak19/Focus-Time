@@ -1,4 +1,4 @@
-/*function startTimer(duration, display) {
+function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
     setInterval(function ()       { 
 minutes = parseInt(timer / 60, 10);
@@ -14,7 +14,13 @@ if(--timer < 0 ) {
    }
     }, 1000);    
 }
-
+function updateTimerFromBackground(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+    const formattedMinutes = minutes < 10 ? '0' + minutes : minutes;
+    const formattedSeconds = remainingSeconds < 10 ? '0' + remainingSeconds : remainingSeconds;
+    document.querySelector('#timer').textContent = `${formattedMinutes}:${formattedSeconds}`;
+}
    window.onload = function() {
         var value = localStorage.getItem('myValue');
         let output = parseInt(value, 10);
@@ -22,43 +28,9 @@ if(--timer < 0 ) {
         display = document.querySelector('#time');
         startTimer(userInput, display);
     };
-    chrome.tabs.executeScript(timer, { file: 'content.js' });*/
-    // background.js (new file)
-let timerDuration;
-let interval;
-
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  if (request.action === "startTimer") {
-    timerDuration = request.duration;
-    interval = setInterval(() => {
-      timerDuration--;
-      chrome.runtime.sendMessage({ action: "updateTimer", time: timerDuration });
-      if (timerDuration <= 0) {
-        clearInterval(interval);
-      }
-    }, 1000);
-  } else if (request.action === "stopTimer") {
-    clearInterval(interval);
-  }
-});
-
-// timerPopup.js
-function startTimer(duration) {
-  chrome.runtime.sendMessage({ action: "startTimer", duration: duration });
-}
-
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  if (request.action === "updateTimer") {
-    let minutes = parseInt(request.time / 60, 10);
-    let seconds = parseInt(request.time % 60, 10);
-    minutes = minutes < 10 ? "0" + minutes : minutes;
-    seconds = seconds < 10 ? "0" + seconds : seconds;
-    document.querySelector('#display').textContent = minutes + ":" + seconds;
-  }
-});
-
-window.onload = function() {
-  var value = localStorage.getItem('myValue');
-  var display = document.querySelector('#display');
-  startTimer(value);
-};
+    chrome.tabs.executeScript(timer, { file: 'content.js' });
+    chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+        if (request.type === 'updateTimer') {
+            updateTimerFromBackground(request.time);
+        }
+    });

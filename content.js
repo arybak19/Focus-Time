@@ -1,8 +1,11 @@
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-    if (request.action === "getTabs") {
-      chrome.tabs.query({ currentWindow: true }, function(tabs) {
-        sendResponse(tabs);
-      });
-      return true; // Will respond asynchronously
+Object.defineProperty(document, 'visibilityState', {
+    get: function() {
+      return 'visible'; // Always return 'visible'
+    }
+  });
+  
+  Object.defineProperty(document, 'hidden', {
+    get: function() {
+      return false; // Always return false (not hidden)
     }
   });

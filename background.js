@@ -39,6 +39,7 @@ function updateTimer() {
         timeLeft--;
         chrome.storage.local.set({ timeLeft: timeLeft })
             .catch(error => console.error('Error updating timer:', error));
+            console.log(timeLeft)
         
         if (timeLeft === 0) {
             stopTimer();

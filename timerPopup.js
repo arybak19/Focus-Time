@@ -15,10 +15,19 @@ if(--timer < 0 ) {
     }, 1000);    
 }
 
-   window.onload = function() {
-        var value = localStorage.getItem('myValue');
-        let output = parseInt(value, 10);
-        var userInput = 60 * output, //the five will be the users inputed time
-        display = document.querySelector('#time');
-        startTimer(userInput, display);
+function updateDisplay() {
+    chrome.runtime.sendMessage({action: 'getTimerStatus'}, (response) => {
+        if (response.isTimerRunning) {
+            let minutes = Math.floor(response.timeLeft / 60);
+            let seconds = response.timeLeft % 60;
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+            document.querySelector('#time').textContent = minutes + ":" + seconds;
+            }
+        });
+    }
+    
+    window.onload = function() {
+        updateDisplay();
+        setInterval(updateDisplay, 1000);
     };

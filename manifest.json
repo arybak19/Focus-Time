@@ -9,6 +9,11 @@
         "default_popup": "index.html"
     },
     "permissions": [
-        "tabs"
-    ]
+        "tabs",
+        "storage",
+        "alarms"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    }
 }

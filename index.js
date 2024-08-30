@@ -1,23 +1,28 @@
-function updateValueDisplay(value) {
-    var output = document.getElementById('value-output');
-    output.innerText = value;
-}
-window.onload = function() {
-    // Get the value from localStorage
-    var value = localStorage.getItem('myValue');
-    
-    // Display the value on the page
-    var output = document.getElementById('value-output');
-    output.innerText = value;
-    chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-        if (request.type === 'valueUpdated') {
-            updateValueDisplay(request.value);
+// index.js
+
+document.addEventListener('DOMContentLoaded', function() {
+    function submitValue() {
+        const input = document.getElementById('value-input');
+        if (input) {
+            const value = input.value;
+            if (value && !isNaN(value) && parseInt(value) > 0) {
+                chrome.runtime.sendMessage({action: 'startTimer', duration: parseInt(value)}, () => {
+                    // Optionally navigate to timer view or close popup
+                    // window.location.href = 'timer.html'; // Uncomment if you want to navigate to a timer page
+                    // window.close(); // Uncomment if you want to close the popup
+                });
+            } else {
+                alert('Please enter a valid positive number.');
+            }
+        } else {
+            console.error('Input element not found');
         }
-    });
-};
-document.getElementById("start").addEventListener("click", submitValue);
-function submitValue() {
-    var input = document.getElementById('value-input');
-    var value = parseInt(input.value, 10);
-    chrome.runtime.sendMessage({action: 'startTimer', duration: value});
-}
+    }
+
+    const startButton = document.getElementById("start");
+    if (startButton) {
+        startButton.addEventListener("click", submitValue);
+    } else {
+        console.error('Start button not found');
+    }
+});

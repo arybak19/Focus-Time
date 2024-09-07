@@ -40,6 +40,9 @@ function updateTimer() {
         chrome.storage.local.set({ timeLeft: timeLeft })
             .catch(error => console.error('Error updating timer:', error));
             console.log(timeLeft)
+            if(timeLeft) {
+                console.log("Timer Ends")
+            }
         
         if (timeLeft === 0) {
             stopTimer();
@@ -56,6 +59,7 @@ function updateTimer() {
 function updateTabList() {
     chrome.tabs.query({ currentWindow: true }, function(tabs) {
         currentTabs = tabs.map(tab => ({ id: tab.id, title: tab.title }));
+        console.log(currentTabs)
     });
 }
 

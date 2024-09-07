@@ -5,7 +5,7 @@ let originalWindowID = null;
 // When the extension is installed and running in the background
 chrome.runtime.onInstalled.addListener(() => {
     console.log('Extension installed and running in the background.');
-    chrome.alarms.create('keepAlive', { periodInMinutes: 0.9 });
+    chrome.alarms.create('keepAlive', { periodInMinutes: 0.3 });
 });
 
 // Keep-alive alarm

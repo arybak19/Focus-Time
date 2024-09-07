@@ -1,5 +1,3 @@
-// mainPopup.js
-
 // Get all tabs in the current window
 chrome.tabs.query({ currentWindow: true }, function(tabs) {
     // Create a list for each tab to be added to
@@ -10,11 +8,12 @@ chrome.tabs.query({ currentWindow: true }, function(tabs) {
         // Create a list item
         const listItem = document.createElement('li');
 
-        // create a checkbox
+        // Create a checkbox
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
+        checkbox.value = tab.id;
 
-        // label
+        // Label
         const label = document.createElement('label');
         label.textContent = tab.title;
 
@@ -25,4 +24,21 @@ chrome.tabs.query({ currentWindow: true }, function(tabs) {
         // Add the list item to the list
         tabList.appendChild(listItem);
     });
+});
+
+// Add event listener to the Focus button
+document.querySelector('a button').addEventListener('click', () => {
+    const checkboxes = document.querySelectorAll('#tabList input[type="checkbox"]');
+    const selectedTabs = [];
+
+    checkboxes.forEach((checkbox) => {
+        if (checkbox.checked) {
+            selectedTabs.push(parseInt(checkbox.value, 10));
+        }
+    });
+
+    const value = localStorage.getItem('myValue');
+    const duration = parseInt(value, 10);
+
+    chrome.runtime.sendMessage({ action: 'startTimer', duration: duration, selectedTabs: selectedTabs });
 });

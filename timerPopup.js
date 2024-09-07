@@ -11,11 +11,11 @@ display.textContent = minutes + ":" + seconds;
 
 if(--timer < 0 ) {
     timer = duration;
-   }
+}
     }, 1000);    
 }
 
-   window.onload = function() {
+window.onload = function() {
         var value = localStorage.getItem('myValue');
         let output = parseInt(value, 10);
         var userInput = 60 * output, //the five will be the users inputed time

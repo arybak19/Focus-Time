@@ -27,7 +27,7 @@ chrome.tabs.query({ currentWindow: true }, function(tabs) {
 });
 
 // Add event listener to the Focus button
-document.querySelector('a button').addEventListener('click', () => {
+document.querySelector('#focusButton').addEventListener('click', () => {
     const checkboxes = document.querySelectorAll('#tabList input[type="checkbox"]');
     const selectedTabs = [];
 

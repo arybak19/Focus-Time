@@ -9,7 +9,8 @@
         "default_popup": "index.html"
     },
     "permissions": [
-        "tabs"
+        "tabs",
+        "activeTab"
     ],
     "background": {
         "service_worker": "background.js"

@@ -48,17 +48,16 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
             }
         }, 1000);
 
-        chrome.webRequest.onBeforeRequest.addListener(
-            function(details) {
-                const url = new URL(details.url);
-                if (url.hostname.endsWith('.gov') || url.hostname.endsWith('.edu') || selectedTabs.includes(details.url)) {
-                    return {cancel: false};
+        chrome.tabs.onCreated.addListener((tab) => {
+            if (timerRunning) {
+                const url = new URL(tab.url);
+                if (!url.hostname.endsWith('.gov') && !url.hostname.endsWith('.edu') && !request.selectedTabs.includes(tab.id)) {
+                    chrome.tabs.remove(tab.id, () => {
+                        console.log('New tab removed:', tab.id);
+                    });
                 }
-                return {cancel: true};
-            },
-            {urls: ["<all_urls>"]},
-            ["blocking"]
-        );
+            }
+        });
 
         // recreate the tabs that were removed, add them to the original window, and end the timer
         setTimeout(() => {

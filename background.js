@@ -11,6 +11,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         chrome.tabs.query({}, (tabs) => {
         tabs.forEach((tab) => {
             if (!request.selectedTabs.includes(tab.id)) {
+                console.log(selectedTabs)
             chrome.tabs.hide(tab.id, () => {
                 hiddenTabs.push(tab.id);
             });

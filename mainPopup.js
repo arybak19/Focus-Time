@@ -1,7 +1,7 @@
 // mainPopup.js
 
 // Get all tabs in the current window
-chrome.tabs.query({  }, function(tabs) {
+chrome.tabs.query({}, function(tabs) {
     // Create a list for each tab to be added to
     const tabList = document.getElementById('tabList');
 

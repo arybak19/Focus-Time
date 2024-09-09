@@ -1,3 +1,7 @@
+// timerPopup.js
+
+
+// Start the timer and create the display for popup
 function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
     const interval = setInterval(function () {
@@ -15,6 +19,7 @@ function startTimer(duration, display) {
     }, 1000);
 }
 
+// Get the value of the time from localStorage
 window.onload = function() {
     var value = localStorage.getItem('myValue');
     let output = parseInt(value, 10);

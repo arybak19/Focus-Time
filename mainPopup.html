@@ -4,17 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./popup.css" />
     <title>Document</title>
     <script src="timerMainPop.js"></script>
 </head>
-    
+    <style>
+        .circle-button {
+            background-color: #ff0303;
+            color: white;
+            border: none;
+            border-radius: 50%;
+        }
+    </style>
     <body>
     <h1> Time Inputted</h1>
     <h2 id="value-output"></h2>
     <h2>minute(s)</h2>
     <h1>Current Tabs</h1>
     <a href="timerPopup.html">  
-        <button id="focusButton">Focus</button>
+        <button class="circle-button" id="focusButton">Focus</button>
     </a>
 
     <div id="tabList"></div>

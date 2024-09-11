@@ -7,6 +7,14 @@
         <title>Focus Time Necssary Popup</title>
         <link rel="stylesheet" href="./popup.css" />
     </head>
+    <style>
+        .circle-button {
+            background-color: #ff0303;
+            color: white;
+            border: none;
+            border-radius: 50%;
+        }
+    </style>
     <body>
         <h1>Attention!</h1>
         <p>Please make sure to have all the necessary tabs that you need open before starting your focus time</p>
@@ -17,7 +25,7 @@
 
         <!-- This is the button to start the proceed to the next page for focus, plus sends the value input -->
         <a href="mainPopup.html">
-            <button id = "start">Proceed</button>
+            <button class="circle-button" id = "start">Proceed</button>
         </a>
         
         <script src="index.js"></script>

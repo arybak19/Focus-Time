@@ -1,8 +1,5 @@
 body {
   width: 20rem;
-  background-color: #5a5ae5;
-  color: #333;
-  font-family: Georgia, sans-serif;
 }
 
 ul {
@@ -12,23 +9,16 @@ ul {
 }
 
 li {
-  padding: 0.5rem;
-  border-radius: 5px;
-  margin-bottom: 0.5rem;
+  padding: 0.25rem;
 }
 li:nth-child(odd) {
-  background: #e0e0e0;
+  background: #80808030;
 }
 li:nth-child(even) {
-  background: #c0c0ff;
+  background: #ffffff;
 }
 
-li:hover {
-  background: #a0a0ff;
-}
- 
 h3,
 p {
   margin: 0;
-  padding: 0.5rem 0;
 }

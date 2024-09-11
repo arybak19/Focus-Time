@@ -27,8 +27,12 @@ body {
     background: #a0a0ff;
   }
    
-.button:hover{
+.circle-button:hover{
   background-color: white;
+}
+
+.inline {
+  display: inline;
 }
 
   h3,

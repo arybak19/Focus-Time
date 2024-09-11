@@ -1,5 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Book+Antiqua&display=swap');
+
+
 body {
   width: 20rem;
+  background-color: #f4f4f9;
+  color: #333;
+  font-family: 'Book Antiqua', serif;
 }
 
 ul {
@@ -9,16 +15,25 @@ ul {
 }
 
 li {
-  padding: 0.25rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 li:nth-child(odd) {
-  background: #80808030;
+  background: #e0e0e0;
 }
 li:nth-child(even) {
-  background: #ffffff;
+  background: #c0c0ff;
 }
 
+li:hover {
+  background: #a0a0ff;
+  transform: scale(1.05);
+}
+ 
 h3,
 p {
   margin: 0;
+  padding: 0.5rem 0;
 }

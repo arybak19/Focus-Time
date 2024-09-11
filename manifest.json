@@ -12,9 +12,7 @@
         "tabs",
         "activeTab",
         "storage",
-        "alarms",
-        "webRequest",
-        "webRequestBlocking"
+        "alarms"
     ],
     "background": {
         "service_worker": "background.js"

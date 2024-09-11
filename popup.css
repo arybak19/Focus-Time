@@ -27,6 +27,10 @@ body {
     background: #a0a0ff;
   }
    
+.button:hover{
+  background-color: white;
+}
+
   h3,
   p {
     margin: 0;

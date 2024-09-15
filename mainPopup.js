@@ -10,22 +10,17 @@ chrome.tabs.query({}, function(tabs) {
         // Create a list item
         const listItem = document.createElement('li');
 
-        const label = document.createElement('label');
-        label.className = 'tabItem';
-
         // Create a checkbox
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
         checkbox.value = tab.id;
 
         // Label
-        const labelText = document.createElement('span');
-        labelText.textContent = tab.title;
+        const label = document.createElement('label');
+        label.textContent = tab.title;
 
         // Add the checkbox and label to the list item
-        label.appendChild(checkbox);
-        label.appendChild(labelText);
-
+        listItem.appendChild(checkbox);
         listItem.appendChild(label);
 
         // Add the list item to the list

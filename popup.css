@@ -4,7 +4,7 @@ body {
     color: #ffffff;
     font-family: Georgia, sans-serif;
     align-items: center;
-    height: 100vh;
+    justify-content: center;
     margin: 0;
   }
   

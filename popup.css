@@ -35,6 +35,35 @@ body {
   display: inline;
 }
 
+#tabList {
+  list-style-type: none;
+  padding: 0;
+}
+
+#tabList li {
+  background-color: white;
+  color: black;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+}
+
+#tabList li input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+#tabList li label {
+  flex-grow: 1;
+}
+
+#tabList li:hover {
+  background-color: black;
+  color: white;
+}
+
   h3,
   p {
     margin: 0;

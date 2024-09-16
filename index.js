@@ -9,7 +9,7 @@ function submitValue(event) {
     if (value >= 1 && value <= 120) {
     localStorage.setItem('myValue', value);
     } else {
-        alert("Please enter a time between 1 and 120 minutes.");
+        alert("Please enter a time between 1 and 120 minutes. We recommend 60 minutes.");
         event.preventDefault();
     }
 }
